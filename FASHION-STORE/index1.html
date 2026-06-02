@@ -3,639 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velvet Fashion</title>
 
-<title>Velora</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{
+    --black:#1A1A1A;
+    --cream:#F5EFE6;
+    --brown:#8B6B4A;
+    --dark-brown:#5C4033;
+    --white:#FFFFFF;
+}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    font-family:'Poppins', sans-serif;
+    background:var(--cream);
+    color:var(--black);
+    min-height:100vh;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+    text-align:center;
+}
+
+/* Header */
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:12px;
+    background:var(--brown);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--white);
+    font-size:22px;
+    font-weight:bold;
+}
+
+.brand-name{
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    color:var(--dark-brown);
+}
+
+/* Hero */
+
+.hero-card{
+    width:100%;
+    background:var(--white);
+    border-radius:30px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero-image{
+    width:100%;
+    height:340px;
+    border-radius:24px;
+    overflow:hidden;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-title{
+    margin-top:24px;
+    font-family:'Playfair Display', serif;
+    font-size:2rem;
+    color:var(--black);
+}
+
+.hero-text{
+    margin-top:12px;
+    color:#666;
+    line-height:1.6;
+    font-size:0.95rem;
+}
+
+/* Button */
+
+.start-btn{
+    margin-top:28px;
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:16px;
+    background:var(--black);
+    color:var(--white);
+    font-size:1rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.start-btn:hover{
+    background:var(--brown);
+    transform:translateY(-2px);
+}
+
+.tagline{
+    margin-top:18px;
+    color:var(--brown);
+    font-size:.85rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+</style>
 </head>
 
-<body class="bg-[#F8F9FA]">
+<body>
 
-<!-- ================= HEADER ================= -->
+<div class="container">
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="logo-section">
+        <div class="logo">V</div>
+        <h1 class="brand-name">Velvet</h1>
+    </div>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="hero-card">
 
-<div class="flex justify-between items-center py-4">
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/18457315/pexels-photo-18457315.jpeg"
+                 alt="Fashion Model">
+        </div>
 
-<!-- Logo -->
-
-<div class="flex items-center gap-3">
-
-<i class="fa-solid fa-store text-4xl text-[#198754]"></i>
-
-<div>
-
-<h1 class="text-2xl md:text-3xl font-bold text-[#198754]">
-Velora
-</h1>
-
-<p class="text-xs text-gray-500">
-Fashion For Everyone
-</p>
-
-</div>
-
-</div>
-
-<!-- Buttons -->
-
-<div class="flex gap-2">
-
-<a href="signup.html"
-class="border border-[#198754]
-text-[#198754]
-px-4 py-2
-rounded-full
-hover:bg-[#198754]
-hover:text-white transition">
-
-Sign Up
-
-</a>
-
-<a href="login.html"
-class="bg-[#198754]
-text-white
-px-4 py-2
-rounded-full
-hover:bg-[#146C43] transition">
-
-Login
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- ================= NAVBAR ================= -->
-
-<nav class="bg-[#F3EEE7]">
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-<div class="flex flex-col lg:flex-row gap-4 py-4 justify-between items-center">
-
-<div class="flex flex-wrap gap-6 font-medium text-[#6C757D]">
-
-<a href="#" class="hover:text-[#198754]">Home</a>
-
-<a href="#" class="hover:text-[#198754]">Categories</a>
-
-<a href="#" class="hover:text-[#198754]">Products</a>
-
-<a href="#" class="hover:text-[#198754]">Contact</a>
-
-<select class="bg-transparent outline-none">
-
-<option>Brands</option>
-<option>Nike</option>
-<option>Adidas</option>
-<option>Puma</option>
-<option>Levi's</option>
-
-</select>
-
-</div>
-
-<div class="flex items-center gap-3">
-
-<input
-type="text"
-placeholder="Search products..."
-class="border rounded-full px-4 py-2 w-52 md:w-72 focus:outline-none focus:border-[#198754]">
-
-<button
-class="bg-[#198754] text-white px-5 py-1 rounded-full">
-
-Search
-
-</button>
-<button class="add-cart bg-[#198754] text-white py-1 rounded-xl p-4">
-    <i class="fa-solid fa-cart-shopping "></i>
-</button>
-
-
-<i class="fa-solid fa-heart text-2xl text-[#198754]"></i>
-
-</div>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- ================= HERO ================= -->
-
-<section class="bg-[#F3EEE7] border-b">
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-<div class="grid lg:grid-cols-2 gap-10 items-center py-16">
-
-<div>
-
-<img
-id="slider"
-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200"
-class="w-full
-h-[280px]
-md:h-[450px]
-lg:h-[550px]
-object-cover
-rounded-3xl
-shadow-2xl
-transition duration-700">
-
-</div>
-
-<div>
-
-<h2 class="text-4xl md:text-6xl font-bold text-[#198754]">
-
-Latest Fashion Collection
-
-</h2>
-
-<p class="mt-6 text-gray-600 text-lg leading-8">
-
-Discover premium fashion collections for men,
-women, kids and sportswear.
-
-Shop the newest arrivals and trending outfits.
-
-</p>
-
-<button
-class="mt-8
-bg-[#198754]
-text-white
-px-8 py-4
-rounded-xl
-font-semibold
-hover:bg-[#146C43]">
-
-Shop Now
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CATEGORY ================= -->
-
-<section class="py-20">
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="category-card bg-white rounded-3xl p-6 text-center shadow-md">
-<h2 class="text-center text-4xl font-bold text-[#198754]">
-
-Shop By Category
-
-</h2>
-
-<p class="text-center text-gray-500 mt-3 mb-12">
-
-Find your perfect style
-
-</p>
-
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-<div class="bg-white rounded-2xl p-6 text-center shadow hover:shadow-2xl hover:-translate-y-2 transition">
-<i class="fa-solid fa-user-tie text-5xl text-[#198754]"></i>
-<h3 class="font-bold mt-4">Men</h3>
-<p class="text-sm text-gray-500 mt-2">Premium men's wear</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 text-center shadow hover:shadow-2xl hover:-translate-y-2 transition">
-<i class="fa-solid fa-person-dress text-5xl text-[#198754]"></i>
-<h3 class="font-bold mt-4">Women</h3>
-<p class="text-sm text-gray-500 mt-2">Latest fashion styles</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 text-center shadow hover:shadow-2xl hover:-translate-y-2 transition">
-<i class="fa-solid fa-child text-5xl text-[#198754]"></i>
-<h3 class="font-bold mt-4">Kids</h3>
-<p class="text-sm text-gray-500 mt-2">Comfortable clothing</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 text-center shadow hover:shadow-2xl hover:-translate-y-2 transition">
-<i class="fa-solid fa-basketball text-5xl text-[#198754]"></i>
-<h3 class="font-bold mt-4">Sports</h3>
-<p class="text-sm text-gray-500 mt-2">Activewear collection</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 text-center shadow hover:shadow-2xl hover:-translate-y-2 transition">
-<i class="fa-solid fa-bag-shopping text-5xl text-[#198754]"></i>
-<h3 class="font-bold mt-4">Products</h3>
-<p class="text-sm text-gray-500 mt-2">New arrivals</p>
-</div>
-
-</div>
-</div>
-</div>
-
-</section>
-
-<!-- ================= BRANDS ================= -->
-
-<section class="py-20 bg-white">
-
-<div class="max-w-7xl mx-auto px-4">
-
-<h2 class="text-center text-4xl font-bold text-[#198754] mb-12">
-
-Featured Brands
-
-</h2>
-
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-<div class="bg-[#F3EEE7] p-8 rounded-2xl text-center">Nike</div>
-<div class="bg-[#F3EEE7] p-8 rounded-2xl text-center">Adidas</div>
-<div class="bg-[#F3EEE7] p-8 rounded-2xl text-center">Puma</div>
-<div class="bg-[#F3EEE7] p-8 rounded-2xl text-center">Levi's</div>
-<div class="bg-[#F3EEE7] p-8 rounded-2xl text-center">H&M</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Offers Section -->
-<section id="offers" class="py-16 bg-[#F3EEE7]">
-
-    <div class="max-w-7xl mx-auto px-4 text-center">
-
-        <!-- Badge -->
-
-        <span class="inline-block bg-[#198754] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow">
-
-            Limited Time Offer
-
-        </span>
-
-        <!-- Heading -->
-
-        <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-
-            Up to 50% Off on Daily Essentials
-
+        <h2 class="hero-title">
+            Discover Your Style
         </h2>
 
-        <!-- Description -->
-
-        <p class="text-lg text-gray-600 mb-8">
-
-            Grab the best deals before they are gone.
-
+        <p class="hero-text">
+            Explore premium fashion collections curated for modern elegance.
+            Find outfits that define your personality and confidence.
         </p>
 
-        <!-- Button -->
+        <button class="start-btn" >
+           <a href="index.html" style="text-decoration: none; color: #FFFFFF; " target="_self ">Get Started</a>
+        </button>
 
-        <a href="#products"
-           class="inline-block bg-[#198754] hover:bg-[#146C43]
-           text-white font-semibold
-           px-8 py-3
-           rounded-full
-           shadow-lg
-           transition duration-300
-           hover:scale-105">
-
-            Shop Deals
-
-        </a>
-
-    </div>
-
-</section>
-<!-- ================= WHY CHOOSE GOSHOP ================= -->
-
-<section class="py-16 bg-white">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Heading -->
-
-        <div class="text-center mb-12">
-
-            <h2 class="text-3xl md:text-4xl font-bold text-[#198754]">
-                Why Choose GoShop?
-            </h2>
-
-            <p class="text-gray-500 mt-3">
-                Enjoy premium shopping experience with trusted services
-            </p>
-
-        </div>
-
-        <!-- Service Cards -->
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            <!-- Fast Delivery -->
-
-            <div
-                class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 text-center
-                hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-
-                <i class="fa-solid fa-truck-fast text-5xl text-[#198754] mb-4"></i>
-
-                <h3 class="text-xl font-semibold text-gray-800">
-                    Fast Delivery
-                </h3>
-
-                <p class="text-gray-500 mt-2 text-sm">
-                    Quick and reliable delivery right to your doorstep.
-                </p>
-
-            </div>
-
-            <!-- Secure Payment -->
-
-            <div
-                class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 text-center
-                hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-
-                <i class="fa-solid fa-shield-halved text-5xl text-[#198754] mb-4"></i>
-
-                <h3 class="text-xl font-semibold text-gray-800">
-                    Secure Payment
-                </h3>
-
-                <p class="text-gray-500 mt-2 text-sm">
-                    Safe and encrypted payment options for every purchase.
-                </p>
-
-            </div>
-
-            <!-- Easy Returns -->
-
-            <div
-                class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 text-center
-                hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-
-                <i class="fa-solid fa-rotate-left text-5xl text-[#198754] mb-4"></i>
-
-                <h3 class="text-xl font-semibold text-gray-800">
-                    Easy Returns
-                </h3>
-
-                <p class="text-gray-500 mt-2 text-sm">
-                    Hassle-free returns and exchanges within return period.
-                </p>
-
-            </div>
-
-            <!-- Support -->
-
-            <div
-                class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 text-center
-                hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-
-                <i class="fa-solid fa-headset text-5xl text-[#198754] mb-4"></i>
-
-                <h3 class="text-xl font-semibold text-gray-800">
-                    24/7 Support
-                </h3>
-
-                <p class="text-gray-500 mt-2 text-sm">
-                    Dedicated customer support available anytime.
-                </p>
-
-            </div>
-
+        <div class="tagline">
+            Luxury • Fashion • Elegance
         </div>
 
     </div>
 
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-
-<section class="py-20">
-
-<div class="max-w-4xl mx-auto px-4 text-center">
-
-<h2 class="text-4xl font-bold text-[#198754]">
-
-Subscribe Newsletter
-
-</h2>
-
-<p class="mt-4 text-gray-600">
-
-Get updates about new products and offers.
-
-</p>
-
-<div class="flex flex-col md:flex-row gap-4 mt-8">
-
-<input
-type="email"
-placeholder="Enter your email"
-class="flex-1 border rounded-xl px-4 py-3">
-
-<button
-class="bg-[#198754]
-text-white px-8 py-3 rounded-xl">
-
-Subscribe
-
-</button>
-
 </div>
-
-</div>
-
-</section>
-
-<div >
-
-  <h2 onclick="toggleFaq(this)" style="cursor:pointer;" class="text-orange-600">Do you know</h2>
-  <p class="answer" style="display:none;" class="text-blue-600"> this is ur book? </p>
-  <p class="answer" style="display:none;" class="text-green-600"> read book </p>
-</div>
-<script>
-  function toggleFaq(element) {
-  const answer = element.nextElementSibling;
-  if (answer.style.display === "none") {
-    answer.style.display = "block";
-  } else {
-    answer.style.display = "none";
-  }
-}
-</script>
-
-
-
-
-<!-- Footer Section -->
-<footer id="contact" class="bg-[#146C43] text-white pt-16 pb-8 py-4">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-            <!-- Company Info -->
-
-            <div>
-
-                <h3 class="text-3xl font-bold text-white mb-4">
-                    GoShop
-                </h3>
-
-                <p class="text-gray-300 leading-7">
-                    Discover premium fashion collections for Men,
-                    Women, Kids, and Sportswear.
-                    Shop the latest trends with confidence.
-                </p>
-
-            </div>
-
-            <!-- Shop Links -->
-
-            <div>
-
-                <h4 class="text-xl font-semibold mb-4">
-                    Shop
-                </h4>
-
-                <ul class="space-y-3">
-
-                    <li>
-                        <a href="#products"
-                           class="text-gray-300 hover:text-white transition">
-                            Products
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#offers"
-                           class="text-gray-300 hover:text-white transition">
-                            Deals
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#categories"
-                           class="text-gray-300 hover:text-white transition">
-                            Categories
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <!-- Support -->
-
-            <div>
-
-                <h4 class="text-xl font-semibold mb-4">
-                    Support
-                </h4>
-
-                <ul class="space-y-3">
-
-                    <li>
-                        <a href="#"
-                           class="text-gray-300 hover:text-white transition">
-                            Help Center
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#"
-                           class="text-gray-300 hover:text-white transition">
-                            Returns
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#"
-                           class="text-gray-300 hover:text-white transition">
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-            
-
-            <!-- Social Media -->
-
-            <div>
-
-                <h4 class="text-xl font-semibold mb-4">
-                    Follow Us
-                </h4>
-
-                <div class="flex gap-5 text-3xl">
-
-                    <a href="#"
-                       class="text-gray-300 hover:text-white hover:scale-110 transition">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-
-                    <a href="#"
-                       class="text-gray-300 hover:text-white hover:scale-110 transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a href="#"
-                       class="text-gray-300 hover:text-white hover:scale-110 transition">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-
-                    <a href="#"
-                       class="text-gray-300 hover:text-white hover:scale-110 transition">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Divider -->
-
-        <div class="border-t border-green-700 mt-10 pt-6">
-
-            <p class="text-center text-gray-300 text-sm">
-
-                © 2026 GoShop Fashion Store. All Rights Reserved.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-<script src="JS/main.js"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+ this the new landing page 
