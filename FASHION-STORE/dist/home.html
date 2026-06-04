@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,22 +13,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
 <script>
 tailwind.config = {
-theme:{
-extend:{
-colors:{
-gold:'#C8A96B',
-beige:'#F8F5EF',
-dark:'#1E1A17'
+
+darkMode: "class",
+
+theme: {
+extend: {
+colors: {
+gold: "#C8A96B",
+beige: "#F8F5EF",
+dark: "#1E1A17"
 }
 }
 }
+
 }
 </script>
 
@@ -39,61 +37,33 @@ dark:'#1E1A17'
 
 <!-- HEADER -->
 
-<header class="bg-white sticky top-0 z-50 shadow-sm">
+<header class="bg-white dark:bg-gray-900 sticky top-0 z-50 shadow">
 
 <div class="flex justify-between items-center p-4">
 
-<div>
-
-<h1 class="text-2xl font-serif">
+<h1 class="text-2xl font-bold">
 Velora
 </h1>
 
-</div>
-
-<div class="flex gap-3">
-
-<a href="login.html"
-class="text-sm border px-3 py-2 rounded-xl">
-Login
-</a>
-
-<a href="register.html"
-class="bg-dark text-white px-3 py-2 rounded-xl text-sm">
-Register
-</a>
-
-<button id="profileBtn">
-    <button onclick="logout()">
-    Logout
-</button>
-
-<i class="fa-solid fa-user"></i>
-
-</button>
-
-</div>
-
-</div>
-<!-- Header Navigation -->
 <div class="flex items-center gap-2">
 
-<button id="themeToggle"
-class="border px-3 py-2 rounded-xl">
+<button
+id="themeToggle"
+class="border px-3 py-2 rounded-lg">
 
 <i class="fa-solid fa-moon"></i>
 
 </button>
 
 <a href="profile.html"
-class="border px-3 py-2 rounded-xl">
+class="border px-3 py-2 rounded-lg">
 
 <i class="fa-solid fa-user"></i>
 
 </a>
 
 <a href="dashboard.html"
-class="border px-3 py-2 rounded-xl">
+class="border px-3 py-2 rounded-lg">
 
 <i class="fa-solid fa-chart-line"></i>
 
@@ -101,11 +71,13 @@ class="border px-3 py-2 rounded-xl">
 
 <button
 onclick="logout()"
-class="bg-red-500 text-white px-3 py-2 rounded-xl">
+class="bg-red-500 text-white px-3 py-2 rounded-lg">
 
 Logout
 
 </button>
+
+</div>
 
 </div>
 
@@ -115,7 +87,7 @@ Logout
 
 <section class="p-4">
 
-<div class="bg-white rounded-2xl p-4 shadow-sm">
+<div class="bg-white dark:bg-gray-900 rounded-2xl p-4 shadow">
 
 <div class="flex justify-between">
 
@@ -140,33 +112,36 @@ Edit
 </div>
 
 </section>
+
+<!-- QUICK LINKS -->
+
 <section class="px-4 mb-4">
 
 <div class="grid grid-cols-4 gap-3">
 
 <a href="profile.html"
-class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center text-sm">
 
 Profile
 
 </a>
 
 <a href="wishlist.html"
-class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center text-sm">
 
 Wishlist
 
 </a>
 
 <a href="cart.html"
-class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center text-sm">
 
 Cart
 
 </a>
 
 <a href="dashboard.html"
-class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center text-sm">
 
 Dashboard
 
@@ -176,15 +151,11 @@ Dashboard
 
 </section>
 
-<!-- HERO IMAGE -->
+<!-- HERO -->
 
 <section class="px-4">
 
-<div
-class="h-[260px]
-bg-gray-200
-rounded-3xl
-overflow-hidden">
+<div class="h-60 rounded-3xl bg-gray-300 overflow-hidden">
 
 <img
 src=""
@@ -195,13 +166,13 @@ class="w-full h-full object-cover">
 
 </section>
 
-<!-- CATEGORY -->
+<!-- CATEGORIES -->
 
 <section class="mt-8">
 
 <div class="px-4 mb-4">
 
-<h2 class="text-xl font-semibold">
+<h2 class="text-xl font-bold">
 Categories
 </h2>
 
@@ -211,25 +182,45 @@ Categories
 
 <div class="flex gap-4 px-4 w-max">
 
-<!-- CATEGORY CARD -->
+<div class="text-center">
 
-<div class="w-24">
+<div class="w-20 h-20 rounded-full bg-gray-300"></div>
 
-<div class="w-24 h-24 bg-gray-200 rounded-full">
-
-<img
-src=""
-class="w-full h-full object-cover rounded-full">
-
-</div>
-
-<p class="text-center mt-2 text-sm">
+<p class="mt-2 text-sm">
 Men
 </p>
 
 </div>
 
-<!-- Repeat 10 Categories -->
+<div class="text-center">
+
+<div class="w-20 h-20 rounded-full bg-gray-300"></div>
+
+<p class="mt-2 text-sm">
+Women
+</p>
+
+</div>
+
+<div class="text-center">
+
+<div class="w-20 h-20 rounded-full bg-gray-300"></div>
+
+<p class="mt-2 text-sm">
+Wedding
+</p>
+
+</div>
+
+<div class="text-center">
+
+<div class="w-20 h-20 rounded-full bg-gray-300"></div>
+
+<p class="mt-2 text-sm">
+Traditional
+</p>
+
+</div>
 
 </div>
 
@@ -241,10 +232,7 @@ Men
 
 <section class="p-4">
 
-<div
-class="h-[160px]
-bg-gray-200
-rounded-3xl">
+<div class="h-40 rounded-3xl bg-gray-300">
 
 <img
 src=""
@@ -254,34 +242,53 @@ class="w-full h-full object-cover rounded-3xl">
 
 </section>
 
-<!-- NEW ARRIVALS -->
+<!-- NEW COLLECTION -->
 
 <section class="p-4">
 
-<h2 class="text-xl font-semibold mb-4">
+<h2 class="text-xl font-bold mb-4">
 New Collection
 </h2>
 
 <div class="grid grid-cols-2 gap-4">
 
-<!-- CARD -->
+<div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden">
 
-<div class="bg-white rounded-2xl overflow-hidden">
-
-<div class="h-52 bg-gray-200">
-
-<img
-src=""
-class="w-full h-full object-cover">
-
-</div>
+<div class="h-44 bg-gray-300"></div>
 
 <div class="p-3">
 
-<h3>Premium Dress</h3>
+<h3 class="font-medium">
+Premium Dress
+</h3>
 
 <p class="text-gold">
 $120
+</p>
+
+<button
+class="w-full mt-3 bg-dark text-white py-2 rounded-xl">
+
+Add To Cart
+
+</button>
+
+</div>
+
+</div>
+
+<div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden">
+
+<div class="h-44 bg-gray-300"></div>
+
+<div class="p-3">
+
+<h3 class="font-medium">
+Designer Wear
+</h3>
+
+<p class="text-gold">
+$140
 </p>
 
 <button
@@ -299,94 +306,29 @@ Add To Cart
 
 </section>
 
-<!-- MEN TRADITIONAL -->
+<!-- WHY CHOOSE US -->
 
 <section class="p-4">
 
-<h2 class="text-xl font-semibold mb-4">
-Men Traditional
-</h2>
-
-<div class="flex gap-4 overflow-x-auto">
-
-<div class="min-w-[220px]">
-
-<div class="h-[300px] bg-gray-200 rounded-3xl">
-
-<img src="" class="w-full h-full object-cover rounded-3xl">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WOMEN TRADITIONAL -->
-
-<section class="p-4">
-
-<h2 class="text-xl font-semibold mb-4">
-Women Traditional
-</h2>
-
-<div class="flex gap-4 overflow-x-auto">
-
-<div class="min-w-[220px]">
-
-<div class="h-[300px] bg-gray-200 rounded-3xl">
-
-<img src="" class="w-full h-full object-cover rounded-3xl">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WEDDING -->
-
-<section class="p-4">
-
-<h2 class="text-xl font-semibold mb-4">
-Wedding Collection
-</h2>
-
-<div class="h-[250px] bg-gray-200 rounded-3xl">
-
-<img src=""
-class="w-full h-full object-cover rounded-3xl">
-
-</div>
-
-</section>
-
-<!-- WHY US -->
-
-<section class="p-4">
-
-<h2 class="text-xl font-semibold mb-4">
+<h2 class="text-xl font-bold mb-4">
 Why Choose Velora
 </h2>
 
-<div class="space-y-4">
+<div class="space-y-3">
 
-<div class="bg-white rounded-2xl p-4">
+<div class="bg-white dark:bg-gray-900 p-4 rounded-xl">
 
 Premium Quality Products
 
 </div>
 
-<div class="bg-white rounded-2xl p-4">
+<div class="bg-white dark:bg-gray-900 p-4 rounded-xl">
 
 Fast Delivery
 
 </div>
 
-<div class="bg-white rounded-2xl p-4">
+<div class="bg-white dark:bg-gray-900 p-4 rounded-xl">
 
 Secure Payments
 
@@ -398,21 +340,21 @@ Secure Payments
 
 <!-- FOOTER -->
 
-<footer class="bg-dark text-white p-6 mt-10">
+<footer class="bg-dark text-white p-6 mt-8">
 
-<div class="grid grid-cols-2 gap-5">
+<div class="grid grid-cols-2 gap-6">
 
 <div>
 
-<h4 class="font-semibold mb-3">
+<h4 class="font-bold mb-3">
 Company
 </h4>
 
 <a href="#" class="block mb-2">
-About
+About Us
 </a>
 
-<a href="#" class="block mb-2">
+<a href="#" class="block">
 Careers
 </a>
 
@@ -420,7 +362,7 @@ Careers
 
 <div>
 
-<h4 class="font-semibold mb-3">
+<h4 class="font-bold mb-3">
 Support
 </h4>
 
@@ -442,7 +384,7 @@ Returns
 
 <button
 id="scrollTop"
-class="fixed right-4 bottom-24 bg-gold text-white w-12 h-12 rounded-full hidden">
+class="hidden fixed bottom-24 right-4 w-12 h-12 rounded-full bg-gold text-white">
 
 <i class="fa-solid fa-chevron-up"></i>
 
@@ -451,7 +393,7 @@ class="fixed right-4 bottom-24 bg-gold text-white w-12 h-12 rounded-full hidden"
 <!-- BOTTOM NAV -->
 
 <nav
-class="fixed bottom-0 w-full bg-white dark:bg-gray-900 border-t">
+class="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-900 border-t dark:border-gray-700">
 
 <div class="grid grid-cols-5 text-center py-3">
 
@@ -479,11 +421,60 @@ class="fixed bottom-0 w-full bg-white dark:bg-gray-900 border-t">
 
 </nav>
 
+<script src="js/app.js"></script>
+
 <script>
+
+$(document).ready(function(){
+
+protectPage();
+
+/* Dark Mode */
+
+const theme =
+localStorage.getItem("theme");
+
+if(theme === "dark"){
+
+$("html").addClass("dark");
+
+$("#themeToggle i")
+.removeClass("fa-moon")
+.addClass("fa-sun");
+
+}
+
+$("#themeToggle").click(function(){
+
+$("html").toggleClass("dark");
+
+if($("html").hasClass("dark")){
+
+localStorage.setItem("theme","dark");
+
+$("#themeToggle i")
+.removeClass("fa-moon")
+.addClass("fa-sun");
+
+}else{
+
+localStorage.setItem("theme","light");
+
+$("#themeToggle i")
+.removeClass("fa-sun")
+.addClass("fa-moon");
+
+}
+
+});
+
+});
+
+/* Scroll Top */
 
 $(window).scroll(function(){
 
-if($(this).scrollTop()>300){
+if($(this).scrollTop() > 300){
 
 $("#scrollTop").fadeIn();
 
@@ -497,132 +488,13 @@ $("#scrollTop").fadeOut();
 
 $("#scrollTop").click(function(){
 
-$("html,body").animate({
+$("html, body").animate({
 scrollTop:0
 },500);
 
 });
 
 </script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<script src="js/app.js"></script>
-
-<script>
-
-$(document).ready(function(){
-
-protectPage();
-
-});
-
-</script>
-<script>
-
-protectPage();
-
-</script>
-
-<script>
-
-$(document).ready(function(){
-
-const theme =
-localStorage.getItem("theme");
-
-if(theme==="dark"){
-
-$("html").addClass("dark");
-
-$("#themeToggle i")
-.removeClass("fa-moon")
-.addClass("fa-sun");
-
-}
-
-$("#themeToggle").click(function(){
-
-$("html").toggleClass("dark");
-
-if($("html").hasClass("dark")){
-
-localStorage.setItem(
-"theme",
-"dark"
-);
-
-$("#themeToggle i")
-.removeClass("fa-moon")
-.addClass("fa-sun");
-
-}else{
-
-localStorage.setItem(
-"theme",
-"light"
-);
-
-$("#themeToggle i")
-.removeClass("fa-sun")
-.addClass("fa-moon");
-
-}
-
-});
-
-});
-
-</script>
-
-<script>
-
-$(document).ready(function(){
-
-const theme =
-localStorage.getItem("theme");
-
-if(theme==="dark"){
-
-$("html").addClass("dark");
-
-$("#themeToggle i")
-.removeClass("fa-moon")
-.addClass("fa-sun");
-
-}
-
-$("#themeToggle").click(function(){
-
-$("html").toggleClass("dark");
-
-if($("html").hasClass("dark")){
-
-localStorage.setItem(
-"theme",
-"dark"
-);
-
-$("#themeToggle i")
-.removeClass("fa-moon")
-.addClass("fa-sun");
-
-}else{
-
-localStorage.setItem(
-"theme",
-"light"
-);
-
-$("#themeToggle i")
-.removeClass("fa-sun")
-.addClass("fa-moon");
-
-}
-
-});
-
-});
-
-</script>
 </body>
 </html>

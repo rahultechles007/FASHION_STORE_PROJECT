@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get Started - Velora</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+
+darkMode: "class",
+
+theme:{
+extend:{
+colors:{
+gold:"#C8A96B",
+beige:"#F8F5EF",
+dark:"#1E1A17"
+}
+}
+}
+
+}
+</script>
+
+</head>
+
+<body class="bg-beige dark:bg-gray-950 dark:text-white min-h-screen">
+
+<!-- MAIN CONTAINER -->
+
+<div class="min-h-screen flex flex-col">>
+
+<!-- TOP SECTION -->
+
+<div>
+
+<div class="h-[40vh] sm:h-[50vh] bg-gray-200 overflow-hidden rounded-b-3xl">
+
+<img
+src=""
+alt="Fashion Banner"
+class="w-full h-full object-cover">
+
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="px-4 sm:px-6 py-6">
+
+<h1 class="text-2xl sm:text-4xl font-bold mb-3 leading-tight">
+
+Discover Your Perfect Style
+
+</h1>
+
+<p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+
+Explore premium fashion collections, traditional wear,
+wedding outfits, seasonal trends, and exclusive offers
+all in one place.
+
+</p>
+
+<!-- FEATURES -->
+
+<div class="mt-8 space-y-3">
+
+<div class="bg-white dark:bg-gray-900 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow">
+
+Premium Fashion Collection
+
+</div>
+
+<div class="bg-white dark:bg-gray-900 p-4 rounded-2xl shadow">
+
+Fast & Secure Shopping
+
+</div>
+
+<div class="bg-white dark:bg-gray-900 p-4 rounded-2xl shadow">
+
+Exclusive Discounts & Offers
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="mt-8 space-y-3">
+
+<button
+onclick="window.location.href='home.html'"
+class="w-full bg-dark text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-medium">
+
+Get Started
+
+</button>
+
+<button
+id="themeToggle"
+class="w-full border py-3 sm:py-4 rounded-xl sm:rounded-2xl">
+
+Toggle Dark Mode
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const theme =
+localStorage.getItem("theme");
+
+if(theme === "dark"){
+
+document.documentElement.classList.add("dark");
+
+}
+
+document
+.getElementById("themeToggle")
+.addEventListener("click",function(){
+
+document.documentElement.classList.toggle("dark");
+
+if(
+document.documentElement.classList.contains("dark")
+){
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+}else{
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
