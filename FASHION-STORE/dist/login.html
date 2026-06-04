@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Velora Login</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+theme:{
+extend:{
+colors:{
+gold:'#C8A96B',
+beige:'#F8F5EF',
+dark:'#1E1A17'
+}
+}
+}
+}
+</script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+overflow:hidden;
+}
+
+.c-ring{
+position:absolute;
+width:260px;
+height:260px;
+border:12px solid #C8A96B;
+border-right-color:transparent;
+border-radius:50%;
+animation:spin 8s linear infinite;
+opacity:.2;
+}
+
+.c-ring2{
+position:absolute;
+width:180px;
+height:180px;
+border:10px solid #C8A96B;
+border-left-color:transparent;
+border-radius:50%;
+animation:spinReverse 6s linear infinite;
+opacity:.3;
+}
+
+@keyframes spin{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
+
+@keyframes spinReverse{
+from{
+transform:rotate(360deg);
+}
+to{
+transform:rotate(0deg);
+}
+}
+
+.fade-up{
+animation:fadeup 1s ease;
+}
+
+@keyframes fadeup{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+<body class="bg-beige min-h-screen flex justify-center items-center relative">
+
+<div class="c-ring"></div>
+<div class="c-ring2"></div>
+
+<div class="bg-white w-[92%] max-w-md rounded-3xl shadow-xl p-7 z-10 fade-up">
+
+<div class="text-center mb-8">
+
+<h1 class="text-4xl font-serif text-dark">
+Velora
+</h1>
+
+<p class="text-gray-500 mt-2">
+Welcome Back
+</p>
+
+</div>
+
+<form id="loginForm">
+
+<div class="mb-4">
+
+<label class="text-sm text-gray-600">
+Email
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="Enter email"
+required
+class="w-full mt-2 border rounded-xl p-3 outline-none focus:border-gold"
+/>
+
+</div>
+
+<div class="mb-4">
+
+<label class="text-sm text-gray-600">
+Password
+</label>
+
+<div class="relative">
+
+<input
+id="password"
+type="password"
+placeholder="Enter password"
+required
+class="w-full mt-2 border rounded-xl p-3 outline-none focus:border-gold"
+/>
+
+<i
+id="togglePassword"
+class="fa-solid fa-eye absolute right-4 top-6 cursor-pointer text-gray-500">
+</i>
+
+</div>
+
+</div>
+
+<div class="flex justify-between items-center mb-6">
+
+<label class="flex items-center gap-2 text-sm">
+
+<input type="checkbox">
+
+Remember Me
+
+</label>
+
+<a href="#" class="text-gold text-sm">
+Forgot Password?
+</a>
+
+</div>
+
+<button
+type="submit"
+class="w-full bg-dark text-white p-3 rounded-xl hover:opacity-90 transition">
+
+Login
+
+</button>
+
+</form>
+
+<div class="mt-6 text-center">
+
+<p class="text-gray-500">
+
+Don't have an account?
+
+<a href="register.html"
+class="text-gold font-semibold">
+
+Register
+
+</a>
+
+</p>
+
+</div>
+
+<div class="mt-8">
+
+<div class="flex items-center gap-3">
+
+<hr class="flex-1">
+
+<span class="text-gray-400 text-sm">
+OR
+</span>
+
+<hr class="flex-1">
+
+</div>
+
+<div class="grid grid-cols-3 gap-3 mt-5">
+
+<button class="border p-3 rounded-xl">
+<i class="fab fa-google text-xl"></i>
+</button>
+
+<button class="border p-3 rounded-xl">
+<i class="fab fa-apple text-xl"></i>
+</button>
+
+<button class="border p-3 rounded-xl">
+<i class="fab fa-instagram text-xl"></i>
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+$("#togglePassword").click(function(){
+
+let input=$("#password");
+
+if(input.attr("type")==="password"){
+
+input.attr("type","text");
+
+$(this)
+.removeClass("fa-eye")
+.addClass("fa-eye-slash");
+
+}else{
+
+input.attr("type","password");
+
+$(this)
+.removeClass("fa-eye-slash")
+.addClass("fa-eye");
+
+}
+
+});
+
+$("#loginForm").submit(function(e){
+
+e.preventDefault();
+
+const email=$("#email").val();
+const password=$("#password").val();
+
+const user=
+JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+
+alert("Please Register First");
+
+window.location.href="register.html";
+
+return;
+
+}
+
+if(
+email===user.email &&
+password===user.password
+){
+
+localStorage.setItem("loggedIn","true");
+
+window.location.href="getstarted.html";
+
+}else{
+
+alert("Invalid Email or Password");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
