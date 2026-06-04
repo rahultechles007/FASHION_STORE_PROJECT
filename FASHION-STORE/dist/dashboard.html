@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Velora</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<script>
+tailwind.config = {
+theme:{
+extend:{
+colors:{
+gold:"#C8A96B",
+beige:"#F8F5EF",
+dark:"#1E1A17"
+}
+}
+}
+}
+</script>
+
+</head>
+
+<body class="bg-beige pb-24">
+
+<!-- HEADER -->
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+
+<div class="flex justify-between items-center p-4">
+
+<h1 class="text-2xl font-serif">
+Velora Dashboard
+</h1>
+
+<a
+href="home.html"
+class="text-gold font-medium">
+
+Home
+
+</a>
+
+</div>
+
+</header>
+
+<!-- PROFILE -->
+
+<section class="p-4">
+
+<div class="bg-white rounded-3xl shadow-sm p-5">
+
+<div class="flex items-center gap-4">
+
+<div
+class="w-20 h-20 rounded-full bg-gray-200 overflow-hidden">
+
+<img
+src=""
+id="profileImage"
+class="w-full h-full object-cover">
+
+</div>
+
+<div>
+
+<h2
+id="userName"
+class="text-xl font-semibold">
+Guest User
+</h2>
+
+<p
+id="userEmail"
+class="text-gray-500">
+guest@email.com
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATISTICS -->
+
+<section class="px-4">
+
+<div class="grid grid-cols-2 gap-4">
+
+<div class="bg-white rounded-2xl p-4">
+
+<h3 class="text-gray-500 text-sm">
+Total Orders
+</h3>
+
+<p class="text-3xl font-bold mt-2">
+12
+</p>
+
+</div>
+
+<div class="bg-white rounded-2xl p-4">
+
+<h3 class="text-gray-500 text-sm">
+Wishlist
+</h3>
+
+<p class="text-3xl font-bold mt-2">
+8
+</p>
+
+</div>
+
+<div class="bg-white rounded-2xl p-4">
+
+<h3 class="text-gray-500 text-sm">
+Cart Items
+</h3>
+
+<p class="text-3xl font-bold mt-2">
+4
+</p>
+
+</div>
+
+<div class="bg-white rounded-2xl p-4">
+
+<h3 class="text-gray-500 text-sm">
+Addresses
+</h3>
+
+<p class="text-3xl font-bold mt-2">
+2
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ACCOUNT MENU -->
+
+<section class="p-4">
+
+<h2 class="font-semibold text-lg mb-4">
+Account
+</h2>
+
+<div class="space-y-3">
+
+<a href="#"
+class="bg-white p-4 rounded-2xl flex justify-between">
+
+<span>My Orders</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+<a href="#"
+class="bg-white p-4 rounded-2xl flex justify-between">
+
+<span>Wishlist</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+<a href="#"
+class="bg-white p-4 rounded-2xl flex justify-between">
+
+<span>Manage Address</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+<a href="#"
+class="bg-white p-4 rounded-2xl flex justify-between">
+
+<span>Order History</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+<a href="#"
+class="bg-white p-4 rounded-2xl flex justify-between">
+
+<span>Edit Profile</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- RECENT ORDERS -->
+
+<section class="p-4">
+
+<h2 class="font-semibold text-lg mb-4">
+Recent Orders
+</h2>
+
+<div class="bg-white rounded-3xl overflow-hidden">
+
+<table class="w-full text-sm">
+
+<thead class="bg-gray-100">
+
+<tr>
+
+<th class="p-3 text-left">
+Order ID
+</th>
+
+<th class="p-3 text-left">
+Status
+</th>
+
+<th class="p-3 text-left">
+Amount
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr class="border-t">
+
+<td class="p-3">
+#1025
+</td>
+
+<td class="p-3 text-green-600">
+Delivered
+</td>
+
+<td class="p-3">
+$180
+</td>
+
+</tr>
+
+<tr class="border-t">
+
+<td class="p-3">
+#1026
+</td>
+
+<td class="p-3 text-yellow-600">
+Processing
+</td>
+
+<td class="p-3">
+$95
+</td>
+
+</tr>
+
+<tr class="border-t">
+
+<td class="p-3">
+#1027
+</td>
+
+<td class="p-3 text-blue-600">
+Shipped
+</td>
+
+<td class="p-3">
+$250
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- SAVED ADDRESS -->
+
+<section class="p-4">
+
+<h2 class="font-semibold text-lg mb-4">
+Saved Address
+</h2>
+
+<div class="bg-white rounded-3xl p-5">
+
+<p>
+
+221B Fashion Street<br>
+New York, USA
+
+</p>
+
+<button
+class="mt-4 bg-dark text-white px-4 py-2 rounded-xl">
+
+Edit Address
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PROFILE SETTINGS -->
+
+<section class="p-4">
+
+<h2 class="font-semibold text-lg mb-4">
+Settings
+</h2>
+
+<div class="space-y-3">
+
+<button
+class="w-full bg-white p-4 rounded-2xl text-left">
+
+Change Password
+
+</button>
+
+<button
+class="w-full bg-white p-4 rounded-2xl text-left">
+
+Notification Settings
+
+</button>
+
+<button
+class="w-full bg-white p-4 rounded-2xl text-left">
+
+Privacy Settings
+
+</button>
+
+<button onclick="logout()">
+    Logout
+</button>
+
+</div>
+
+</section>
+<!-- Dashboard Counters -->
+<p id="totalOrders">0</p>
+
+<p id="wishlistItems">0</p>
+
+<p id="cartItems">0</p>
+
+<p id="addressCount">0</p>
+
+<!-- LOGOUT -->
+
+<section class="p-4 mb-10">
+
+<button
+id="logoutBtn"
+class="w-full bg-red-500 text-white py-4 rounded-2xl">
+
+Logout
+
+</button>
+
+</section>
+
+<!-- BOTTOM NAV -->
+
+<nav
+class="fixed bottom-0 left-0 w-full bg-white border-t">
+
+<div class="grid grid-cols-5 py-3 text-center">
+
+<a href="home.html">
+<i class="fa-solid fa-house"></i>
+</a>
+
+<a href="#">
+<i class="fa-solid fa-layer-group"></i>
+</a>
+
+<a href="#">
+<i class="fa-solid fa-bag-shopping"></i>
+</a>
+
+<a href="#">
+<i class="fa-solid fa-cart-shopping"></i>
+</a>
+
+<a href="#">
+<i class="fa-solid fa-magnifying-glass"></i>
+</a>
+
+</div>
+
+</nav>
+
+<script>
+
+$(document).ready(function(){
+
+const user =
+JSON.parse(
+localStorage.getItem("user")
+);
+
+if(user){
+
+$("#userName").text(user.name);
+$("#userEmail").text(user.email);
+
+}
+
+$("#logoutBtn").click(function(){
+
+localStorage.removeItem("loggedIn");
+
+window.location.href="login.html";
+
+});
+
+});
+
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+protectPage();
+
+});
+
+</script>
+
+</body>
+
+</html>
