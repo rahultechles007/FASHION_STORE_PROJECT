@@ -35,7 +35,7 @@ dark:'#1E1A17'
 
 </head>
 
-<body class="bg-beige pb-24">
+<body class="bg-beige dark:bg-gray-950 dark:text-white pb-24">
 
 <!-- HEADER -->
 
@@ -75,6 +75,39 @@ Register
 </div>
 
 </div>
+<!-- Header Navigation -->
+<div class="flex items-center gap-2">
+
+<button id="themeToggle"
+class="border px-3 py-2 rounded-xl">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<a href="profile.html"
+class="border px-3 py-2 rounded-xl">
+
+<i class="fa-solid fa-user"></i>
+
+</a>
+
+<a href="dashboard.html"
+class="border px-3 py-2 rounded-xl">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</a>
+
+<button
+onclick="logout()"
+class="bg-red-500 text-white px-3 py-2 rounded-xl">
+
+Logout
+
+</button>
+
+</div>
 
 </header>
 
@@ -103,6 +136,41 @@ Edit
 </button>
 
 </div>
+
+</div>
+
+</section>
+<section class="px-4 mb-4">
+
+<div class="grid grid-cols-4 gap-3">
+
+<a href="profile.html"
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+
+Profile
+
+</a>
+
+<a href="wishlist.html"
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+
+Wishlist
+
+</a>
+
+<a href="cart.html"
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+
+Cart
+
+</a>
+
+<a href="dashboard.html"
+class="bg-white dark:bg-gray-900 p-3 rounded-xl text-center">
+
+Dashboard
+
+</a>
 
 </div>
 
@@ -383,28 +451,28 @@ class="fixed right-4 bottom-24 bg-gold text-white w-12 h-12 rounded-full hidden"
 <!-- BOTTOM NAV -->
 
 <nav
-class="fixed bottom-0 w-full bg-white border-t">
+class="fixed bottom-0 w-full bg-white dark:bg-gray-900 border-t">
 
 <div class="grid grid-cols-5 text-center py-3">
 
-<a href="#">
+<a href="home.html">
 <i class="fa-solid fa-house"></i>
 </a>
 
-<a href="#">
-<i class="fa-solid fa-layer-group"></i>
+<a href="wishlist.html">
+<i class="fa-solid fa-heart"></i>
 </a>
 
-<a href="#">
-<i class="fa-solid fa-bag-shopping"></i>
-</a>
-
-<a href="#">
+<a href="cart.html">
 <i class="fa-solid fa-cart-shopping"></i>
 </a>
 
-<a href="#">
-<i class="fa-solid fa-magnifying-glass"></i>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i>
+</a>
+
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
 </a>
 
 </div>
@@ -452,6 +520,108 @@ protectPage();
 <script>
 
 protectPage();
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+
+const theme =
+localStorage.getItem("theme");
+
+if(theme==="dark"){
+
+$("html").addClass("dark");
+
+$("#themeToggle i")
+.removeClass("fa-moon")
+.addClass("fa-sun");
+
+}
+
+$("#themeToggle").click(function(){
+
+$("html").toggleClass("dark");
+
+if($("html").hasClass("dark")){
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+$("#themeToggle i")
+.removeClass("fa-moon")
+.addClass("fa-sun");
+
+}else{
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+$("#themeToggle i")
+.removeClass("fa-sun")
+.addClass("fa-moon");
+
+}
+
+});
+
+});
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+
+const theme =
+localStorage.getItem("theme");
+
+if(theme==="dark"){
+
+$("html").addClass("dark");
+
+$("#themeToggle i")
+.removeClass("fa-moon")
+.addClass("fa-sun");
+
+}
+
+$("#themeToggle").click(function(){
+
+$("html").toggleClass("dark");
+
+if($("html").hasClass("dark")){
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+$("#themeToggle i")
+.removeClass("fa-moon")
+.addClass("fa-sun");
+
+}else{
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+$("#themeToggle i")
+.removeClass("fa-sun")
+.addClass("fa-moon");
+
+}
+
+});
+
+});
 
 </script>
 </body>
